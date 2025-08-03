@@ -15,37 +15,55 @@ export const SUPPORTED_LANGUAGES = [
 // Menü öğeleri (rol bazlı)
 export const MENU_ITEMS = {
   [USER_ROLES.ADMIN]: [
-    {
-      id: 'dashboard',
-      label: 'Dashboard',
-      path: '/dashboard',
-      icon: 'LayoutDashboard'
-    },
-    {
-      id: 'users',
-      label: 'Kullanıcılar',
-      path: '/dashboard/users',
-      icon: 'Users'
-    },
-    {
-      id: 'products',
-      label: 'Ürünler',
-      path: '/dashboard/products',
-      icon: 'Package'
-    },
-    {
-      id: 'analytics',
-      label: 'Analitik',
-      path: '/dashboard/analytics',
-      icon: 'BarChart3'
-    },
-    {
-      id: 'settings',
-      label: 'Ayarlar',
-      path: '/dashboard/settings',
-      icon: 'Settings'
-    }
-  ],
+  {
+    title: 'Genel'
+  },
+  {
+    id: 'dashboard',
+    label: 'Dashboard',
+    path: '/dashboard',
+    icon: 'LayoutDashboard'
+  },
+  {
+    title: 'Yönetim'
+  },
+  {
+    id: 'users',
+    label: 'Kullanıcılar',
+    path: '/dashboard/users',
+    icon: 'Users'
+  },
+  {
+    id: 'products',
+    label: 'Ürünler',
+    path: '/dashboard/products',
+    icon: 'Package',
+    children: [
+      {
+        id: 'all-products',
+        label: 'Tüm Ürünler',
+        path: '/dashboard/products'
+      },
+      {
+        id: 'add-product',
+        label: 'Ürün Ekle',
+        path: '/dashboard/products/add'
+      }
+    ]
+  },
+  {
+    id: 'analytics',
+    label: 'Analitik',
+    path: '/dashboard/analytics',
+    icon: 'BarChart3'
+  },
+  {
+    id: 'settings',
+    label: 'Ayarlar',
+    path: '/dashboard/settings',
+    icon: 'Settings'
+  }
+],
   [USER_ROLES.MANAGER]: [
     {
       id: 'dashboard',

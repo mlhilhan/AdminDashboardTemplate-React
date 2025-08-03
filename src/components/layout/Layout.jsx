@@ -47,33 +47,27 @@ const Layout = ({ children }) => {
   };
 
   return (
-    <div className="flex h-screen bg-gray-50">
-      {/* Sidebar */}
-      <Sidebar
-        isOpen={isSidebarOpen}
-        onClose={closeSidebar}
-        isCollapsed={isSidebarCollapsed}
-        onToggleCollapse={toggleSidebarCollapse}
-      />
 
-      {/* Main content area */}
-      <div className={`flex flex-col flex-1 min-w-0 transition-all duration-300 ${
-        isSidebarCollapsed ? 'lg:ml-16' : 'lg:ml-64'
-      }`}>
-        {/* Header */}
-        <Header
+<div className="flex h-screen bg-gray-50">
+  {/* Sidebar */}
+  <Sidebar
+    isOpen={isSidebarOpen}
+    onClose={closeSidebar}
+    isCollapsed={isSidebarCollapsed}
+    onToggleCollapse={toggleSidebarCollapse}
+  />
+
+  {/* Main content */}
+  <div className="flex-1 flex flex-col min-w-0">
+    <Header
           onMenuToggle={toggleSidebar}
           isSidebarOpen={isSidebarOpen}
         />
-
-        {/* Main content */}
-        <main className="flex-1 overflow-y-auto">
-          <div className="px-4 py-6 lg:px-8">
-            {children}
-          </div>
-        </main>
-      </div>
-    </div>
+    <main className="flex-1 overflow-y-auto px-4 py-6 lg:px-8">
+      {children}
+    </main>
+  </div>
+</div>
   );
 };
 
